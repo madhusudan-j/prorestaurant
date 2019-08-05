@@ -27,3 +27,6 @@ urlpatterns = [
     path('accounts/login/', views.LoginView.as_view(), name='login'),
     path('accounts/logout/', views.LogoutView.as_view(), name='logout'),
 ]
+urlpatterns += [
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT, })
+]
